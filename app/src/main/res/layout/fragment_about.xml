@@ -4,16 +4,40 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/container"
-        app:dividerPadding="0dp"
-        app:showDividers="beginning|middle|end"
-        app:divider="@drawable/ic_filter"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="@dimen/padding_normal"
-        android:orientation="vertical" />
+        android:layout_height="wrap_content">
+
+        <com.glucode.about_you.about.views.ProfileCardView
+            android:id="@+id/profile_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:profileName="John Doe"
+            app:profilePosition="Senior Developer"
+            app:yearsOfExperience="5"
+            app:cupOfCoffee="100"
+            app:bugsNumber="200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:profileImage="@drawable/ic_person"
+            app:profileNameColor="@color/black"
+            app:profilePositionColor="@color/black"
+            app:profileBackgroundColor="@color/cardview_dark_background"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/container"
+            app:dividerPadding="0dp"
+            app:showDividers="beginning|middle|end"
+            app:divider="@drawable/ic_filter"
+            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/padding_normal"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/profile_view"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

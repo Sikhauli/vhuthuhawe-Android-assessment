@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="ProfileView">
+    <attr name="profileName" format="string" />
+    <attr name="profilePosition" format="string" />
+    <attr name="yearsOfExperienceLabel" format="string" />
+    <attr name="cupOfCoffeeLabel" format="string" />
+    <attr name="bugsNumberLabel" format="string" />
+    <attr name="yearsOfExperience" format="integer" />
+    <attr name="cupOfCoffee" format="integer" />
+    <attr name="bugsNumber" format="integer" />
+    <attr name="profileImage" format="reference" />
+    <attr name="profileNameColor" format="color" />
+    <attr name="profilePositionColor" format="color" />
+    <attr name="profileBackgroundColor" format="color" />
+  </declare-styleable>
+</resources>

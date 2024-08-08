@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.glucode.about_you.databinding.ItemEngineerBinding
 import com.glucode.about_you.engineers.models.Engineer
+import com.glucode.about_you.utils.loadImageFromInternalStorage
 
 class EngineersRecyclerViewAdapter(
     private var engineers: List<Engineer>,
@@ -29,8 +30,9 @@ class EngineersRecyclerViewAdapter(
             binding.root.setOnClickListener {
                 onClick(engineer)
             }
-            //TODO - set profile picture
-//            statusIcon.setDrawable(item.icon)
+            binding.profileImage.setImageDrawable(
+                loadImageFromInternalStorage(binding.root.context, engineer.name)
+            )
         }
     }
 }
