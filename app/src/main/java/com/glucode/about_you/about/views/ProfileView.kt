@@ -10,9 +10,10 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.glucode.about_you.R
 import com.glucode.about_you.about.ImagePickerFragment
+import com.glucode.about_you.databinding.ViewProfileBinding
 import com.glucode.about_you.utils.ImageUtils
 
-class ProfileCardView @JvmOverloads constructor(
+class ProfileView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
@@ -124,7 +125,6 @@ class ProfileCardView @JvmOverloads constructor(
       binding.bugsNumberLabel.setTextColor(value)
     }
 
-
   init {
 
     binding.profileImage.setOnClickListener {
@@ -151,11 +151,11 @@ class ProfileCardView @JvmOverloads constructor(
         yearsOfExperienceColor = getColor(R.styleable.ProfileView_yearsOfExperienceColor, Color.WHITE)
         cupOfCoffeeColor = getColor(R.styleable.ProfileView_cupOfCoffeeColor, Color.WHITE)
         bugsNumberColor = getColor(R.styleable.ProfileView_bugsNumberColor, Color.WHITE)
-        yearsOfExperienceLabelColor =  getColor(R.styleable.ProfileView_yearsOfExperienceLabelColor, Color.BLACK)
-        cupOfCoffeeLabelColor =  getColor(R.styleable.ProfileView_cupOfCoffeeLabelColor, Color.BLACK)
-        bugsNumberLabelColor =  getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
-        cupOfCoffeeLabelColor =  getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
-        yearsOfExperienceLabelColor =  getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
+        yearsOfExperienceLabelColor = getColor(R.styleable.ProfileView_yearsOfExperienceLabelColor, Color.BLACK)
+        cupOfCoffeeLabelColor = getColor(R.styleable.ProfileView_cupOfCoffeeLabelColor, Color.BLACK)
+        bugsNumberLabelColor = getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
+        cupOfCoffeeLabelColor = getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
+        yearsOfExperienceLabelColor = getColor(R.styleable.ProfileView_bugsNumberLabelColor, Color.BLACK)
 
       } finally {
         recycle()

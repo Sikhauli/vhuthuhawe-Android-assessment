@@ -13,5 +13,12 @@
     <attr name="profileNameColor" format="color" />
     <attr name="profilePositionColor" format="color" />
     <attr name="profileBackgroundColor" format="color" />
+    <attr name="yearsOfExperienceColor" format="color" />
+    <attr name="cupOfCoffeeColor" format="color" />
+    <attr name="bugsNumberColor" format="color" />
+    <attr name="bugsNumberLabelColor" format="color" />
+    <attr name="cupOfCoffeeLabelColor" format="color" />
+    <attr name="yearsOfExperienceLabelColor" format="color" />
   </declare-styleable>
 </resources>
+

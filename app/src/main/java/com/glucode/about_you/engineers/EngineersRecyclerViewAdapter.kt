@@ -30,9 +30,13 @@ class EngineersRecyclerViewAdapter(
             binding.root.setOnClickListener {
                 onClick(engineer)
             }
+            //TODO - set profile picture
+
+            //statusIcon.setDrawable(item.icon)
             binding.profileImage.setImageDrawable(
                 loadImageFromInternalStorage(binding.root.context, engineer.name)
             )
         }
     }
 }
+

@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:elevation="@dimen/elevation_large"
+    >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      >
+
+    <com.glucode.about_you.about.views.ProfileView
+        android:id="@+id/profile_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:bugsNumber="200"
+        app:bugsNumberLabel="Bugs"
+        app:cupOfCoffee="100"
+        app:cupOfCoffeeLabel="Coffees"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:profileImage="@drawable/ic_user"
+        app:profileName="John Doe"
+        app:profileNameColor="#FFFFFF"
+        app:profilePosition="Senior Developer"
+        app:profilePositionColor="#cccccc"
+        app:yearsOfExperience="5"
+        app:yearsOfExperienceLabel="Years"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/padding_normal"
+        app:divider="@drawable/ic_filter"
+        app:dividerPadding="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile_view"
+        app:showDividers="beginning|middle|end"
+        />
 
-        <com.glucode.about_you.about.views.ProfileCardView
-            android:id="@+id/profile_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:profileName="John Doe"
-            app:profilePosition="Senior Developer"
-            app:yearsOfExperience="5"
-            app:cupOfCoffee="100"
-            app:bugsNumber="200"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:profileImage="@drawable/ic_person"
-            app:profileNameColor="@color/black"
-            app:profilePositionColor="@color/black"
-            app:profileBackgroundColor="@color/cardview_dark_background"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/container"
-            app:dividerPadding="0dp"
-            app:showDividers="beginning|middle|end"
-            app:divider="@drawable/ic_filter"
-            android:layout_width="match_parent"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/padding_normal"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/profile_view"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+>>>>>>> Stashed changes
 </androidx.core.widget.NestedScrollView>

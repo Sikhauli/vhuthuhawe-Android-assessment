@@ -54,7 +54,6 @@ class AboutFragment: Fragment() {
             questionView.title = question.questionText
             questionView.answers = question.answerOptions
             questionView.selection = question.answer.index
-
             binding.container.addView(questionView)
         }
     }

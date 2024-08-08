@@ -15,16 +15,18 @@
             android:id="@+id/title"
             style="@style/Material.Body1.Medium.Light"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/answers"
+            app:layout_constraintEnd_toEndOf="parent"
             tools:text="Question" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/answers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginTop="@dimen/margin_extra_large"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

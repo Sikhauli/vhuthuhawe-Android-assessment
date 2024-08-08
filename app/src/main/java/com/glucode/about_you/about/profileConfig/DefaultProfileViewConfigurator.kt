@@ -3,16 +3,16 @@ package com.glucode.about_you.about.profileConfig
 import android.content.Context
 import androidx.core.content.ContextCompat
 import com.glucode.about_you.R
-import com.glucode.about_you.about.views.ProfileCardView
+import com.glucode.about_you.about.views.ProfileView
 import com.glucode.about_you.engineers.models.Engineer
 import com.glucode.about_you.utils.loadImageFromInternalStorage
 
 interface ProfileViewConfigurator {
-  fun configureProfileView(profileView: ProfileCardView, engineer: Engineer, context: Context)
+  fun configureProfileView(profileView: ProfileView, engineer: Engineer, context: Context)
 }
 
 class DefaultProfileViewConfigurator : ProfileViewConfigurator {
-  override fun configureProfileView(profileView: ProfileCardView, engineer: Engineer, context: Context) {
+  override fun configureProfileView(profileView: ProfileView, engineer: Engineer, context: Context) {
     profileView.profileName = engineer.name
     profileView.profilePosition = engineer.role
     profileView.yearsOfExperience = engineer.quickStats.years
