@@ -12,6 +12,7 @@ import com.glucode.about_you.mockdata.MockData
 
 class EngineersFragment : Fragment() {
     private lateinit var binding: FragmentEngineersBinding
+    private var engineers: List<Engineer> = MockData.engineers
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +21,7 @@ class EngineersFragment : Fragment() {
     ): View {
         binding = FragmentEngineersBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
-        setUpEngineersList(MockData.engineers)
+        setUpEngineersList(engineers)  // Initially set up the list without sorting
         return binding.root
     }
 
@@ -30,18 +31,36 @@ class EngineersFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_years) {
-            return true
+        when (item.itemId) {
+            R.id.action_years -> {
+                sortEngineersBy { it.quickStats.years }
+                return true
+            }
+            R.id.action_coffees -> {
+                sortEngineersBy { it.quickStats.coffees }
+                return true
+            }
+            R.id.action_bugs -> {
+                sortEngineersBy { it.quickStats.bugs }
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
         }
-        return super.onOptionsItemSelected(item)
+    }
+
+    private fun sortEngineersBy(criteria: (Engineer) -> Int) {
+        val sortedEngineers = engineers.sortedBy(criteria)
+        setUpEngineersList(sortedEngineers)
     }
 
     private fun setUpEngineersList(engineers: List<Engineer>) {
         binding.list.adapter = EngineersRecyclerViewAdapter(engineers) {
             goToAbout(it)
         }
-        val dividerItemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
-        binding.list.addItemDecoration(dividerItemDecoration)
+        if (binding.list.itemDecorationCount == 0) {
+            val dividerItemDecoration = DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+            binding.list.addItemDecoration(dividerItemDecoration)
+        }
     }
 
     private fun goToAbout(engineer: Engineer) {
